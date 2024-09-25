@@ -111,5 +111,16 @@ namespace BankAccoundtApp
                 DisplayAccountList(); //not the most practical way to do it.
             }
         }
+
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            int accountNumber = int.Parse(txtAccountNumber.Text);
+            decimal balance = decimal.Parse(txtBalance.Text);
+            string bankName = txtBankName.Text; 
+            CheckingAccount ca = new CheckingAccount(accountNumber, balance, bankName);
+            //save to the list
+            accountList.Add(ca);
+            DisplayAccountList(); //not the most practical way to do it.
+        }
     }
 }
